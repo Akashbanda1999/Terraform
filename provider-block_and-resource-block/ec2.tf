@@ -8,7 +8,7 @@ resource "aws_instance" "this_ubuntu" {
     security_groups = ["sg-02d0271c0935355dc"]
     count = 4  #loop 
     tags = {
-      purpose = "jenkins server"
+      purpose = "ec2"
     } 
     
 
