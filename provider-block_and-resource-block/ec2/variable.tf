@@ -10,7 +10,7 @@ variable "my-key" {
 
 }
 
-variable "my-Instance-type" {
+variable "my-instance-type" {
     type = string
     default = "t2.micro"
 
