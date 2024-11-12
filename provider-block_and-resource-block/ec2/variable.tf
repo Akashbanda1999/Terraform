@@ -17,13 +17,13 @@ variable "my-Instance-type" {
 }
 
 variable "my-disable_api_stop" {
-    type = bool1
+    type = bool
     default = false
 
 }
 
 variable "my-disable_api_termination" {
-    type = bool2
+    type = bool
     default = false
 
 }
