@@ -29,6 +29,6 @@ variable "my-disable_api_termination" {
 }
 
 variable "my-count" {
-    type = count
+    type = number
     default = 2
 }
