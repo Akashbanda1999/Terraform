@@ -48,7 +48,7 @@ variable "this_any" {
         count = 1
         api_termination_ec2 = false
         api_stop_ec2 = false 
-        ami_ec2 = "ami-03753afda9b8ba740" 
+        ami_ec2 = "ami-0866a3c8686eaeeba" 
         instance_type_list = ["t2.micro" , "t3.small" , "t3.large"]
         tags_map = {
            purposeec2 = "webserver" 
