@@ -1,6 +1,6 @@
 provider "aws" {
    profile = "configs"
-   region  = "ap-northeast-2"
+   region  = "us-east-1"
     default_tags {
                 tags = {
                     name = "aws"
