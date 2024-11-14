@@ -1,6 +1,6 @@
 # Security Group to allow HTTP access
 resource "aws_security_group" "carvcilla_sg" {
-  name        = "carvcilla_app_sg"
+  name        = "carvcilla_sg"
   description = "Allow HTTP traffic for Static app"
   vpc_id      = var.vpc_id
 
