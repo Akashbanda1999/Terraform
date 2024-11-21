@@ -1,7 +1,7 @@
 provider "aws" {
       region = "us-east-1"
       profile = "configs"
-      shared_credentials_files= ["/home/cloudshell-user/.aws/credentials"]
+      shared_credentials_files= "/home/cloudshell-user/.aws/credentials"
     
 }
 
@@ -13,7 +13,7 @@ terraform {
         dynamodb_table = "iam38"
         region = "us-east-1"
         profile = "configs"
-        shared_credentials_files = ["/home/cloudshell-user/.aws/credentials"]
+        shared_credentials_files = "/home/cloudshell-user/.aws/credentials"
     }
 }
 
@@ -22,7 +22,7 @@ resource "aws_instance" "ths_instance" {
   ami = "ami-0866a3c8686eaeeba"
   //key_name = "north"
   instance_type = "t2.micro"
-  //security_groups = ["sg-02d0271c0935355dc"]
+  //security_groups = "sg-02d0271c0935355dc"
   count = 1
   
   
