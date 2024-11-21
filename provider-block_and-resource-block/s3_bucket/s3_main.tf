@@ -1,8 +1,8 @@
-resource "aws_s3_bucket" "my_bucket" {
+resource "aws_s3_bucket" "your_bucket" {
   bucket = "iamironman"
 
   tags = {
-    Name = "My bucket"
+    Name = "My-bucket"
   }
 }
  
