@@ -8,7 +8,7 @@ provider "aws" {
 #LockID
 terraform {
     backend "s3" {
-        bucket = "iamironman38"
+        bucket = "iamakashbanda"
         key = "terraform.tfstate"
         dynamodb_table = "test-my-app-table-d"
         region = "us-east-1"
