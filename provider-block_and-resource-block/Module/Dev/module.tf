@@ -1,4 +1,3 @@
-
 module "ec2" {
     source = "/home/cloudshell-user/Terraform/provider-block_and-resource-block/Module/Resources/EC2"
     this_image_id = "ami-0866a3c8686eaeeba"
