@@ -1,7 +1,7 @@
 provider "aws" {
       region = "us-east-1"
-      profile = "config"
-      shared_credentials_files = ["~/.aws/credentials"]
+      profile = "configs"
+      shared_credentials_files = ["/home/cloudshell-user/.aws/credentials"]
     
 }
 
@@ -12,8 +12,8 @@ terraform {
         key = "terraform.tfstate"
         dynamodb_table = "iam38"
         region = "us-east-1"
-        profile = "config"
-        shared_credentials_files = ["~/.aws/credentials"]
+        profile = "configs"
+        shared_credentials_files = ["/home/cloudshell-user/.aws/credentials"]
     }
 }
 
