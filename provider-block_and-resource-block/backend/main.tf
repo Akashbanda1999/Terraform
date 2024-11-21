@@ -13,7 +13,6 @@ terraform {
         dynamodb_table = "iam38"
         region = "us-east-1"
         profile = "configs"
-        shared_credentials_files = ["/home/cloudshell-user/.aws/credentials"]
     }
 }
 
