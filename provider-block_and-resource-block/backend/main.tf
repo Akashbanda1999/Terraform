@@ -1,7 +1,7 @@
 provider "aws" {
       region = "us-east-1"
       profile = "configs"
-      shared_credentials_file = "/home/cloudshell-user/.aws/credentials"
+      shared_credentials_files = "/home/cloudshell-user/.aws/credentials"
     
 }
 
