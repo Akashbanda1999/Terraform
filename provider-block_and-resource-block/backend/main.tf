@@ -10,7 +10,7 @@ terraform {
     backend "s3" {
         bucket = "iamironman38"
         key = "terraform.tfstate"
-        dynamodb_table = "iam38"
+        dynamodb_table = "test-my-app-table-d"
         region = "us-east-1"
         profile = "configs"
     }
