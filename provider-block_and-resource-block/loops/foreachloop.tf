@@ -1,19 +1,35 @@
 
+
+
 resource "aws_instance" "this_aws_instance" {
-    for_each = toset(var.aws_ami)
+    for_each = toset(var.imageid)
     ami = each.value
-    instance_type = "t3.medium"
-
+    #vpc_security_group_ids = ["sg-032e1a4a1685a03be"]
+    #key_name = "delete_oregon_anup"
+    instance_type = "t2.micro"
     
-} 
+}   
 
-variable aws_ami {
-       type = list(string)
-       default = ["ami-03972092c42e8c0ca", "ami-0583d8c7a9c35822c", "ami-0b247d4d0226ca7cd" , "ami-04a81a99f5ec58529" ]
+resource "aws_iam_user" "main_user"{
+    for_each = toset(var.main_user_name)
+    name = each.value
 }
 
+variable "main_user_name" {
+    type = list(string)
+   
+    default = ["ubuntu","awslinux","windows"]
+}
 
-output "aws_public_ip" {
-    value = [for instance in var.aws_ami:
-    aws_instance.this_aws_instance[instance].public_ip]
+variable "imageid" {
+    type = list(string)
+    default = ["ami-012967cc5a8c9f891","ami-0866a3c8686eaeeba","ami-05b1a50d6798f63cb"]
+
+}
+
+output "aws_ec2" {
+  value = [
+    for instance in var.imageid:
+        aws_instance.this_aws_instance[instance].public_ip
+  ]
 }
