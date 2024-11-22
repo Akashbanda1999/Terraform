@@ -1,3 +1,3 @@
-ubuntu_ami        = "ami-0dee22c13ea7a9a67"  # Use an appropriate AMI ID for your region
+ubuntu_ami        = "ami-0866a3c8686eaeeba"  # Use an appropriate AMI ID for your region
 aws_instance_type = "t2.micro"
-key_name          = "mum-key"     # Replace with your EC2 key pair name
+key_name          = "north"     # Replace with your EC2 key pair name
