@@ -20,16 +20,25 @@ resource "aws_db_instance" "rds_instances" {
   identifier          = "${each.key}-rds"
   engine              = "mariadb"
   instance_class      = each.value.instance_class
-  allocated_storage   = 20  # Adjust storage as required
-  #name                = "${each.key}_db"
+  allocated_storage   = 20
   username            = "admin"               # Change as needed
-  password            = "SecurePassword123!"  # Use a secure password
+  password            = "Password123"  # Use a secure password
   publicly_accessible = false
   skip_final_snapshot = true
 
-  # Apply other configurations as required
   tags = {
     Environment = each.key
   }
 }
 
+# Output the RDS instance endpoints dynamically
+output "rds_endpoints" {
+  value = { for key, instance in aws_db_instance.rds_instances : key => instance.endpoint }
+  description = "Endpoints of the RDS instances for each environment"
+}
+
+# Optional: Output the instance identifiers dynamically
+output "rds_identifiers" {
+  value = { for key, instance in aws_db_instance.rds_instances : key => instance.identifier }
+  description = "Identifiers of the RDS instances for each environment"
+}
