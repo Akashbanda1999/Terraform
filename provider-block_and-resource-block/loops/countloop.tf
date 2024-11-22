@@ -9,6 +9,6 @@ resource "aws_iam_user" "this_aws_iam_user_2" {
 
 
 variable "users_list" {
-    default = ["virat" , "rohit" , "raina"]
+    default = ["Akash" , "Ratnadeep" , "Dnynaeshwar"]
 }                #0         #1       #2
   
