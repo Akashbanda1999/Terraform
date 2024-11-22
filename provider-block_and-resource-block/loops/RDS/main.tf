@@ -25,7 +25,7 @@ resource "aws_db_instance" "rds_instances" {
   engine              = "mariadb"
   instance_class      = each.value.instance_class
   allocated_storage   = 20  # Adjust storage as required
-  name                = "${each.key}_db"
+  #name                = "${each.key}_db"
   username            = "admin"               # Change as needed
   password            = "SecurePassword123!"  # Use a secure password
   publicly_accessible = false
