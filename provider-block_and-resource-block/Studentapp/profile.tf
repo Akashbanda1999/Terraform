@@ -1,9 +1,5 @@
 provider "aws" {
-   profile = "akash"
-   region  = "us-east-1"
-    default_tags {
-                tags = {
-                    name = "aws"
-                }
-    }
+ region = "us-east-1"
+ profile = "configs"
+ 
 }
