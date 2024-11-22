@@ -1,6 +1,6 @@
 provider "aws" {
-   profile = "swapnil"
-   region  = "ap-northeast-2"
+   profile = "akash"
+   region  = "us-east-1"
     default_tags {
                 tags = {
                     name = "aws"
