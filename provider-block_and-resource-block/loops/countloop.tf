@@ -1,13 +1,3 @@
-provider "aws" {
-   profile = "configs"
-    default_tags {
-                tags = {
-                    name = "aws"
-                }
-    }
-}
-
-
 resource "aws_iam_user" "this_aws_iam_user" { 
     count = length(var.users_list)  #3
     name = var.users_list[count.index]
