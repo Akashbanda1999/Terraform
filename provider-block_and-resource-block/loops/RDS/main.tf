@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1" # Adjust region as needed
-}
-
 # Define the configurations for different environments
 variable "environments" {
   default = {
