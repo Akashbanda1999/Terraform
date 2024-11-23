@@ -15,7 +15,7 @@
     connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = "id_rsa.pem"
+    private_key = file("${path.module}/id_rsa.pem")
     host     = self.public_ip
   }
 
