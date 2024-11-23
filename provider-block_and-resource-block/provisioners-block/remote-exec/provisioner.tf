@@ -1,12 +1,12 @@
  
   resource "aws_instance" "this_aws_instance" {
     //for_each = toset(var.imageid)
-    ami = each.value
-    vpc_security_group_ids = ["sg-032e1a4a1685a03be"]
-    key_name = "delete_oregon_anup"
+    ami = "ami-0866a3c8686eaeeba"
+    vpc_security_group_ids = ["sg-02d0271c0935355dc"]
+    key_name = "north"
     instance_type = "t2.micro"
      provisioner "file" {
-    source      = "hello.txt"
+    source      = "readme.md"
     destination = "/home/ec2-user/aws/"
   }
    provisioner "local-exec" {
@@ -15,7 +15,7 @@
     connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = "ec2-private"
+    private_key = "id_rsa.pem"
     host     = self.public_ip
   }
 
