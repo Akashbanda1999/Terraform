@@ -22,7 +22,7 @@ resource "aws_instance" "example" {
     connection {
       type        = "ssh"
       user        = "ec2-user"              # Default user for many AMIs
-      private_key = file("~/.ssh/north.pem") # Path to your private key
+      private_key = file("~/.ssh/id_rsa.pem") # Path to your private key
       host        = self.public_ip
     }
   }
