@@ -2,7 +2,7 @@ provider "aws" {
     region =  "us-east-1"
     access_key = ""
     secret_key = ""
-    //profile = "configs"
+    profile = "configs"
 }
  resource "aws_instance" "this_aws_instance" {
     ami = "ami-0866a3c8686eaeeba"
