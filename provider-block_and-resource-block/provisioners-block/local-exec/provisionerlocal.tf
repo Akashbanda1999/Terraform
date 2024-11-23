@@ -4,6 +4,7 @@ provider "aws" {
     secret_key = ""
     profile = "configs"
 }
+
  resource "aws_instance" "this_aws_instance" {
     ami = "ami-0866a3c8686eaeeba"
     vpc_security_group_ids = ["sg-02d0271c0935355dc"]
