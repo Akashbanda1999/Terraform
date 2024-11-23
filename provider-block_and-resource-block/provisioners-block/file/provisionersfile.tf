@@ -1,13 +1,13 @@
 provider "aws" {
-    region =  "us-west-2"
+    region =  "us-east-1"
     access_key = ""
     secret_key = ""
-    //profile = "configs"
+    profile = "configs"
 }
  resource "aws_instance" "this_aws_instance" {
-    ami = "ami-0eb5115914ccc4bc2"
-    vpc_security_group_ids = ["sg-081787a4571bd9c08"]
-    key_name = "anup_delete"
+    ami = "ami-0866a3c8686eaeeba"
+    vpc_security_group_ids = ["sg-02d0271c0935355dc"]
+    key_name = "north"
     instance_type = "t2.micro"
      
      provisioner "file" {
