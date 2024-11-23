@@ -10,7 +10,7 @@ provider "aws" {
     key_name = "north"
     instance_type = "t2.micro"
      
-     //provisioner "file" {
+     provisioner "file" {
     source      = "readme.md"
     destination = "/home/ubuntu/readme.md"
       connection {
