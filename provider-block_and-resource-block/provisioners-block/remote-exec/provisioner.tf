@@ -5,7 +5,6 @@
     vpc_security_group_ids = ["sg-02d0271c0935355dc"]
     key_name = "north"
     instance_type = "t2.micro"
-  }
   provisioner "file" {
     source      = "readme.md"
     destination = "/home/ec2-user/aws/"
