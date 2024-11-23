@@ -1,33 +1,29 @@
 provider "aws" {
-    region =  "us-east-1"
-    profile = "configs"
+  region = "us-east-1"
 }
 
- resource "aws_instance" "this_aws_instance" {
-    ami = "ami-0866a3c8686eaeeba"
-    vpc_security_group_ids = ["sg-02d0271c0935355dc"]
-    key_name = "north"
-    instance_type = "t2.micro"
-  #provisioner "file" {
-    #source      = "readme.md"
-    #destination = "/home/ec2-user/aws/"
-  #}
-  #provisioner "local-exec" {
-    #command = "echo ${self.private_ip} >> private_ips.txt"
-  #}
-    connection {
-    type     = "ssh"
-    user     = "ec2-user"
-    private_key = file("${path.module}/id_rsa.pem")
-    host     = "${self.public_ip}"
+resource "aws_instance" "example" {
+  ami           = "ami-0866a3c8686eaeeba" # Replace with your AMI ID
+  instance_type = "t2.micro"
+  key_name      = "north"                # Ensure this matches your SSH key
+  subnet_id     = "subnet-04e37288a351e8f8c"       # Replace with your subnet ID
+
+  tags = {
+    Name = "TerraformInstance"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "yum install httpd -y",
-      "systemctl start httpd",
-      "systemctl enable httpd"
+      "sudo apt update",
+      "sudo apt install -y nginx",
+      "sudo systemctl start nginx"
     ]
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"              # Default user for many AMIs
+      private_key = file("~/.ssh/north.pem") # Path to your private key
+      host        = self.public_ip
+    }
   }
-    
-}  
+}
