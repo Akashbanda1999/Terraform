@@ -6,11 +6,11 @@
     key_name = "north"
     instance_type = "t2.micro"
   }
-     provisioner "file" {
+  provisioner "file" {
     source      = "readme.md"
     destination = "/home/ec2-user/aws/"
   }
-   provisioner "local-exec" {
+  provisioner "local-exec" {
     command = "echo ${self.private_ip} >> private_ips.txt"
   }
     connection {
