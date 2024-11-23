@@ -12,7 +12,7 @@ provider "aws" {
      
      provisioner "file" {
     source      = "readme.md"
-    destination = "/home/ec2-user/readme.md"
+    destination = "/home/ubuntu/readme.md"
       connection {
     type     = "ssh"
     user     = "ubuntu"
