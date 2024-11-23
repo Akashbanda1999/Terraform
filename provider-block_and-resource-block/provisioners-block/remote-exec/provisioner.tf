@@ -1,4 +1,7 @@
- 
+provider "aws" {
+    region =  "us-east-1"
+    profile = "configs"
+} 
   resource "aws_instance" "this_aws_instance" {
     //for_each = toset(var.imageid)
     ami = "ami-0866a3c8686eaeeba"
