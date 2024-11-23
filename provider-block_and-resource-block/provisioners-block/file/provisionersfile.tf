@@ -15,7 +15,7 @@ provider "aws" {
     destination = "/home/ec2-user/readme.md"
       connection {
     type     = "ssh"
-    user     = "ec2-user"
+    user     = "ubuntu"
     private_key = file("${path.module}/id_rsa.pem")
     host     = "${self.public_ip}"
   }
