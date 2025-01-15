@@ -17,4 +17,3 @@ module "eks" {
       key_name      = "north"
     }
   }
-}
