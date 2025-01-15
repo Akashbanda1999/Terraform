@@ -5,8 +5,8 @@ module "eks" {
   cluster_name    = "my-eks-cluster"
   node_group_name = "node"
   cluster_version = "1.31" # Latest EKS version at the time of writing
-  subnet_ids      = ["subnet-0475abf0fd6adfce0","subnet-05d2056f662a6dc9f","subnet-01f99de82fab8114b"]
-  vpc_id          = "vpc-036309236ea8db490"
+  subnet_ids      = ["subnet-0c0ee504b24edba00","subnet-08d9250923457ef56","subnet-07cc631e7b8ef1d7f","subnet-0453783e8ac0b07f3","subnet-06299bc9fc7ea8f51"]
+  vpc_id          = "vpc-0f8bace96ea512f5b"
 
   scaling_config = {
     eks_nodes = {
@@ -15,7 +15,7 @@ module "eks" {
       min_capacity     = 1
 
       instance_type = "t3.medium"
-      key_name      = "mum-key"
+      key_name      = "north"
     }
   }
 }
