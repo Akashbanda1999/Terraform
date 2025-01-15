@@ -36,7 +36,7 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "19.8.1"
   cluster_name    = "my-eks-cluster"
-  cluster_version = "1.26"
+  cluster_version = "1.31"
 
   subnets = module.vpc.private_subnets
   vpc_id  = module.vpc.vpc_id
@@ -50,7 +50,7 @@ module "eks" {
       min_capacity     = 1
 
       instance_type = "t3.medium"
-      key_name      = "my-key-pair" # Add your SSH key pair name
+      key_name      = "north" # Add your SSH key pair name
     }
   }
 
