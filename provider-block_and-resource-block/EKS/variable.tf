@@ -1,5 +1,5 @@
 variable "region" {
-  default = "ap-south-1"
+  default = "us-east-1"
 }
 
 variable "cluster_name" {
@@ -8,7 +8,7 @@ variable "cluster_name" {
 
 variable "vpc_id" {
   description = "The VPC ID for the EKS cluster"
-  default     = "vpc-036309236ea8db490"
+  default     = "vpc-0f8bace96ea512f5b"
 }
 
 variable "subnets" {
