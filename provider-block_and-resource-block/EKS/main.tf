@@ -1,4 +1,4 @@
-# Create a VPC
+/*# Create a VPC
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.18.1"
@@ -70,4 +70,4 @@ output "eks_cluster_endpoint" {
 
 output "eks_cluster_security_group_id" {
   value = module.eks.cluster_security_group_id
-}
+}*/
