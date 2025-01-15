@@ -1,13 +1,13 @@
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.0"
-
+  source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "my-eks-cluster"
-  cluster_version = "1.31" # Latest EKS version at the time of writing
-  subnet_ids      = ["subnet-0c0ee504b24edba00","subnet-08d9250923457ef56","subnet-07cc631e7b8ef1d7f","subnet-0453783e8ac0b07f3","subnet-06299bc9fc7ea8f51"]
-  vpc_id          = "vpc-0f8bace96ea512f5b"
+  cluster_version = "1.31
+  subnets         = module.vpc.private_subnets
+  vpc_id          = module.vpc.vpc_id
 
-  node_group_name = "node-group"
+  cluster_role_arn = module.eks_roles.iam_role_arn
+
+  node_groups = {
     eks_nodes = {
       desired_capacity = 2
       max_capacity     = 3
@@ -17,3 +17,8 @@ module "eks" {
       key_name      = "north"
     }
   }
+
+  tags = {
+    "Environment" = "Dev"
+  }
+}
