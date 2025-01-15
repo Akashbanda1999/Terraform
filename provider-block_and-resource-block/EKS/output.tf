@@ -1,9 +1,11 @@
-output "cluster_id" {
-  description = "The EKS cluster ID"
-  value       = module.eks.cluster_id
+output "eks_cluster_name" {
+  value = module.eks.cluster_id
 }
 
-output "node_group_arn" {
-  description = "The ARN of the node group"
-  value       = module.eks.node_groups["eks_nodes"].node_group_arn
+output "eks_cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+
+output "eks_cluster_security_group_id" {
+  value = module.eks.cluster_security_group_id
 }
