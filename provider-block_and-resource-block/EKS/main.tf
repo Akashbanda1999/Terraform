@@ -7,8 +7,7 @@ module "eks" {
   subnet_ids      = ["subnet-0c0ee504b24edba00","subnet-08d9250923457ef56","subnet-07cc631e7b8ef1d7f","subnet-0453783e8ac0b07f3","subnet-06299bc9fc7ea8f51"]
   vpc_id          = "vpc-0f8bace96ea512f5b"
 
-  node_group_name = "node"
-  scaling_config = {
+  node_groups = {
     eks_nodes = {
       desired_capacity = 2
       max_capacity     = 3
