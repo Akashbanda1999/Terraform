@@ -1,4 +1,4 @@
-module "vpc" {
+/*module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.18.1"
 
@@ -13,4 +13,4 @@ module "vpc" {
   tags = {
     "Name" = "eks-vpc"
   }
-}
+}*/

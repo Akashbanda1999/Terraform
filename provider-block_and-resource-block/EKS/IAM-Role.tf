@@ -1,4 +1,4 @@
-module "eks_roles" {
+/*module "eks_roles" {
   source  = "terraform-aws-modules/iam/aws"
 
   eks_cluster_role_name = "eks-cluster-role"
@@ -6,4 +6,4 @@ module "eks_roles" {
     "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
     "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
   ]
-}
+}*/
